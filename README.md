@@ -2,6 +2,7 @@
 This is a simple Instagram media viewer built with [React.js](https://github.com/facebookincubator/create-react-app) and React Router Dom.
 
 ![alt text][gif]
+
 [gif]: https://thumbs.gfycat.com/DenseDelectableGoldenretriever-size_restricted.gif "Insta"
 
 # Set up
