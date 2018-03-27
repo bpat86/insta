@@ -8,7 +8,7 @@ This is a simple Instagram media viewer built with [React.js](https://github.com
 # Set up
 * Register your app in the [Instagram Developer's section](https://www.instagram.com/developer/) to receive an API access token
 * Rename .env-placeholder to .env in the project's root
-* Paste your Access Token into .env
+* Paste your access token into .env
 * npm start
 
 # Functionality basics
