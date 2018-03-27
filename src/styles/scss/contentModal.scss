@@ -1,0 +1,596 @@
+html {
+    &.modalVisible {
+        section {
+            &#bodyContent {
+                z-index: auto;
+            }
+        }
+        .contentModalContainer {
+            opacity: 1;
+            z-index: 3;
+            pointer-events: auto;
+            overflow: hidden;
+        }
+        .contentModal {
+            opacity: 1;
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        .Instagram {
+            z-index: auto;
+        }
+    }
+}
+.LightBox {
+    z-index: 4;
+    .contentModalBackground {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+        z-index: 999999;
+    }
+    .contentModalContainer {
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	background-color: rgba(0,0,0,.8);
+    	position: fixed;
+    	left: 0;
+    	right: 0;
+    	top: 0;
+    	bottom: 0;
+        opacity: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    .buttonContainer {
+        margin: 0 auto;
+        pointer-events: none;
+    }
+    .closeButton {
+        position: absolute;
+        z-index: 999999999;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        button {
+            margin: 0;
+            padding: 14px;
+            width: 50px;
+            height: 50px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 9999999;
+            outline: 0;
+            border: 0;
+            opacity: 0.8;
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 0.95) 0s;
+            -webkit-transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 0.95) 0s;
+            &:hover {
+                opacity: 1;
+            }
+            svg {
+                display: block;
+                .shadow {
+                    stroke: #000;
+                    -webkit-filter: url(#blur-filter);
+                    filter: url(#blur-filter);
+                    opacity: 0.5;
+                }
+                .closeX {
+                    stroke: $white;
+                    fill: transparent;
+                    stroke-linecap: round;
+                    stroke-width: 5;
+                    border: 0;
+                    background: none;
+                }
+            }
+        }
+    }
+    .buttons {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 770px;
+        margin: auto;
+        pointer-events: auto;
+        z-index: 9999999;
+        user-select: none;
+        -webkit-user-select: none;
+        //text-indent: -9999em;
+        .prevButton, .nextButton {
+            position: absolute;
+            margin: 0;
+            margin-top: -29px;
+            padding: 0 20px;
+            top: 50%;
+            cursor: pointer;
+            z-index: 3;
+            -webkit-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+            -moz-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+            -ms-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+            -o-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+            transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+            .fa {
+                color: rgba($white, 0.75);
+                @include font-size(54px);
+            }
+        }
+        .prevButton {
+            left: -250px;
+            opacity: 0.8;
+            &:hover {
+                opacity: 1;
+                //transform: scale(1.1);
+            }
+            &.hide {
+                opacity: 0;
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+        .nextButton {
+            right: -250px;
+            opacity: 0.8;
+            &:hover {
+                opacity: 1;
+                //transform: scale(1.1);
+            }
+            &.hide {
+                opacity: 0;
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+    }
+    .contentModal {
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	-webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        flex-direction: column;
+        margin: auto;
+        position: relative;
+        pointer-events: auto;
+        //max-width: 1000px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: 100%;
+    	z-index: 99999999;
+        border-radius: 2px;
+        overflow: hidden;
+        opacity: 0;
+    	.mediaContainer {
+    		display: flex;
+    		justify-content: center;
+    		align-items: center;
+            max-width: 100%;
+            -webkit-user-select: none;  /* Chrome all / Safari all */
+            -moz-user-select: none;     /* Firefox all */
+            -ms-user-select: none;      /* IE 10+ */
+            user-select: none;          /* Likely future */
+        	.likes {
+                @include font($firaSans, 400);
+                @include font-size(15px);
+                letter-spacing: 0.03em;
+                position: absolute;
+    		    top: 0;
+    		    left: 0;
+    		    width: auto;
+    		    margin: 10px;
+    		    color: $white;
+    		    text-shadow: 0px 0px 4px rgba($black,0.6);
+                .fa {
+                    margin: 0;
+                    margin-right: 2px;
+                    @include font-size(14px);
+                }
+            }
+            .captions, .comments {
+                @include font($firaSans, 400);
+                @include font-size(15px);
+                letter-spacing: 0.03em;
+                position: absolute;
+    		    top: 20px;
+    		    left: 0;
+    		    width: auto;
+    		    margin: 10px;
+    		    color: $white;
+    		    text-shadow: 0px 0px 4px rgba($black,0.6);
+                .fa {
+                    margin: 0;
+                    margin-right: 2px;
+                    @include font-size(14px);
+                }
+            }
+            .carouselContainer {
+                ul.dots {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    bottom: 15px;
+                    padding: 0;
+                    list-style: none;
+                    text-align: center;
+                    z-index: 3;
+                    li {
+                        position: relative;
+                        display: inline-block;
+                        width: 6px;
+                        height: 6px;
+                        margin: 0 3px;
+                        padding: 0;
+                        cursor: pointer;
+                        button {
+                            display: block;
+                            font-size: 0;
+                            line-height: 0;
+                            width: 6px;
+                            height: 6px;
+                            padding: 3px;
+                            cursor: pointer;
+                            color: transparent;
+                            border: 0;
+                            outline: none;
+                            background: transparent;
+                            text-shadow: 0px 0px 4px rgba($black,0.6);
+                            &:before {
+                                font-family: 'fontAwesome';
+                                font-size: 7px;
+                                line-height: 8px;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 6px;
+                                height: 6px;
+                                content: '\f111';
+                                text-align: center;
+                                opacity: .3;
+                                color: $white;
+                            }
+                        }
+                        &.active {
+                            button {
+                                -webkit-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                                -moz-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                                -ms-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                                -o-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                                transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                                &::before {
+                                    opacity: 0.8;
+                                    color: $white;
+                                    transform: scale(1.25);
+                                }
+                            }
+                        }
+                    }
+                }
+                .buttons {
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    margin: auto;
+                    z-index: 2;
+                    opacity: 0;
+                    -webkit-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                    -moz-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                    -ms-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                    -o-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                    transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                    &.show {
+                        opacity: 1
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                    .prevButton, .nextButton {
+                        position: absolute;
+                        margin: 0;
+                        margin-top: -21px;
+                        padding: 0 20px;
+                        top: 50%;
+                        cursor: pointer;
+                        pointer-events: auto;
+                        z-index: 3;
+                        text-shadow: 0 0 8px rgba($darkGray,0.6);
+                        -webkit-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                        -moz-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                        -ms-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                        -o-transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                        transition: all 0.2s cubic-bezier(0.25,1,0.25,1);
+                        .fa {
+                            color: $white;
+                            @include font-size(42px);
+                        }
+                    }
+                    .prevButton {
+                        left: -10px;
+                        opacity: 0.8;
+                        &:hover {
+                            opacity: 1;
+                            //transform: scale(1.1);
+                        }
+                        &.hide {
+                            opacity: 0;
+                            z-index: -1;
+                            pointer-events: none;
+                        }
+                    }
+                    .nextButton {
+                        right: -10px;
+                        opacity: 0.8;
+                        &:hover {
+                            opacity: 1;
+                            //transform: scale(1.1);
+                        }
+                        &.hide {
+                            opacity: 0;
+                            z-index: -1;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+    		.videoContainer, .carouselContainer, .mediaContainer {
+                width: 100%;
+                height: 100%;
+    			cursor: pointer;
+                .videoImageContainer, .carouselMediaContainer, .imageContainer {
+                    position: relative;
+                    overflow: hidden;
+                    background-color: #000000;
+                    img, video {
+                        width: 100%;
+                        max-width: 100%;
+                        height: 100%;
+                        max-height: 100%;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    img, video {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
+                    video {
+                        z-index: 2;
+                    }
+                    img {
+                        z-index: 1;
+                    }
+                }
+                .carouselMediaContainer {
+                    video {
+                        position: absolute;
+                        min-width: 150%;
+                        min-height: 150%;
+                        width: auto;
+                        height: auto;
+                        left: -25%;
+                        top: -25%;
+                        z-index: 2;
+                    }
+                }
+                .muteButton {
+                    background-image: $muteButton;
+                    background-size: 100% 100%;
+                    background-position: 0 0;
+                }
+                .unmuteButton {
+                    background-image: $unmuteButton;
+                    background-size: 100% 100%;
+                    background-position: 0 0;
+                }
+                .videoThumbnailControlsSprite {
+                    background-image: $video;
+                    background-size: 100% 100%;
+                    background-position: 0 0;
+                }
+                .videoControlsSprite {
+                    background-image: $playButton;
+                    background-size: 100% 100%;
+                    background-position: 0 0;
+                    opacity: 0.8;
+                    z-index: 3;
+                    pointer-events: none;
+                    &.hide {
+                    	opacity: 0;
+                    	z-index: -1;
+                    }
+                }
+                .videoThumbnailControlsSprite, .muteButton, .unmuteButton {
+                    display: block;
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    top: 5px;
+                    right: 10px;
+                    z-index: 3;
+                    transition: 1s cubic-bezier(.19,1,.22,1);
+                    will-change: transform;
+                    opacity: 1;
+                }
+                .videoControlsSprite {
+                    display: block;
+                    position: absolute;
+                    height: 60px;
+                    left: 50%;
+                    margin-left: -67px;
+                    margin-top: -30px;
+                    top: 50%;
+                    width: 135px;
+                    z-index: 3;
+                    transition: 1s cubic-bezier(.19,1,.22,1);
+                    will-change: transform;
+                }
+                &:hover {
+                	.videoControlsSprite {
+                        opacity: 1;
+    	                transform: scale(0.9);
+    	            }
+                }
+            }
+    		img, video {
+                width: 100%;
+    		}
+    	}
+    	.mainContent {
+    		background: $white;
+    	    -webkit-box-pack: center;
+    	    -webkit-justify-content: center;
+    	    -ms-flex-pack: center;
+    	    justify-content: center;
+            max-width: 100%;
+    	    margin-right: 335px;
+    	    //min-height: 450px;
+    	    position: relative;
+    	}
+    	.contentSideBar {
+    		.sideBarInfo {
+    			display: inline-block;
+    			-webkit-box-sizing: border-box;
+    			box-sizing: border-box;
+    			background: $white;
+    			padding-left: 24px;
+    			padding-right: 24px;
+    			position: absolute;
+    			top: 0;
+    			right: 0;
+    			bottom: 0;
+    			width: 335px;
+    			header {
+    				background: $white;
+    				&.profileInfo {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+    					border-bottom: 1px solid #efefef;
+    				    height: 78px;
+    				    position: relative;
+    				    width: 100%;
+    				    .profilePicture {
+    				    	display: flex;
+    				    	margin-right: 10px;
+    						img {
+    							width: 38px;
+    							height: 38px;
+    							border-radius: 50%;
+    						}
+    					}
+    					.username {
+    						@include font($firaSans, 600);
+    		        		@include font-size(15px);
+    		        		width: auto;
+    		        		height: 40px;
+    		        		line-height: 40px;
+    					}
+    				}
+    			}
+    			.username {
+    				@include font($firaSans, 600);
+            		@include font-size(15px);
+            		width: auto;
+            		height: auto;
+            		line-height: 1.7;
+            		margin-right: 10px;
+            		float: left;
+    			}
+                .postedDate {
+                    @include font($firaSans, 400);
+                    @include font-size(12px);
+                    text-transform: uppercase;
+                    letter-spacing: .04em;
+                    height: auto;
+                    margin: 15px 0;
+                    line-height: 1.7;
+                    opacity: 0.7;
+                }
+                .postedLocation {
+                    @include font($firaSans, 400);
+                    @include font-size(15px);
+                    text-decoration: underline;
+                    height: auto;
+                    margin: 0;
+                    line-height: 1.7;
+                    .fa {
+                        margin-left: 4px;
+                        margin-right: 10px;
+                        @include font-size(14px);
+                    }
+                }
+                .likes {
+                    @include font($firaSans, 400);
+                    @include font-size(15px);
+                    letter-spacing: 0.03em;
+                    position: relative;
+                    width: 100%;
+                    margin: 10px 0;
+                    .fa {
+                        margin: 0;
+                        margin-left: 1px;
+                        margin-right: 2px;
+                        @include font-size(14px);
+                    }
+                }
+                .captions, .comments {
+                    @include font($firaSans, 400);
+                    @include font-size(15px);
+                    letter-spacing: 0.03em;
+                    position: relative;
+                    width: 100%;
+                    margin: 10px 0;
+                    padding-bottom: 15px;
+                    color: $darkGray;
+                    border-bottom: 1px solid #efefef;
+                    .fa {
+                        margin: 0;
+                        margin-right: 2px;
+                        @include font-size(14px);
+                    }
+                }
+    			.caption, .comment {
+    				@include font($firaSans, 400);
+            		@include font-size(15px);
+            		height: auto;
+            		margin: 0;
+            		margin-bottom: 15px;
+            		line-height: 1.7;
+    			}
+    			a {
+    				&.button {
+    					position: absolute;
+    					bottom: 0;
+    					&:hover {
+    						opacity: 0.8;
+    					}
+    				}
+    			}
+    		}
+    	}
+    }
+}

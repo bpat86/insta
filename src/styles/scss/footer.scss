@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 100%;
+    position: relative;
+    width: 100%;
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+    .footerContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,232 @@
+// BEGIN post Thumbnails
+.Instagram {
+    flex: 1 100%;
+    margin: auto;
+    .instagramFeed {
+        p {
+            margin-bottom: 1em;
+        }
+        .loadingContainer {
+            margin: 0;
+        }
+        .instagramFeedContainer {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin: 0 auto;
+            margin-top: 10px;
+            padding: 0;
+
+            display: grid;
+            grid-gap: 0.5em;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            grid-auto-flow: row;
+            @include tablet {
+                grid-template-columns: 3fr 3fr;
+            }
+        }
+        .post {
+            -webkit-box-flex: auto;
+            -ms-flex: auto;
+            flex: auto;
+            width: 100%;
+            @include aspect-ratio(1,1);
+            &:before, &::before {
+                overflow: hidden;
+            }
+            .content {
+                background: $bgGray;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                -webkit-background-clip: padding-box;
+                -moz-background-clip: padding;
+                background-clip: padding-box;
+                border-radius: 2px;
+                overflow: hidden;
+                transition: 1.4s cubic-bezier(0.19,1,0.22,1);
+                z-index: 1;
+            }
+            .content > * {
+                /* Aspect Ratio */
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .postLinks {
+                .info {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin: 0;
+                    padding: 1.25em;
+                    width: 100%;
+                    text-align: center;
+                    left: 50%;
+                    will-change: transform;
+                    transform: translate(-50%,12px) scale(0.9);
+                    opacity: 0;
+                    transition: .7s cubic-bezier(.19,1,.22,1);
+                    -webkit-user-select: none;  /* Chrome all / Safari all */
+                    -moz-user-select: none;     /* Firefox all */
+                    -ms-user-select: none;      /* IE 10+ */
+                    user-select: none;          /* Likely future */
+                    .caption {
+                        width: 100%;
+                        @include font($firaSans, 400);
+                        @include font-size(15px);
+                        letter-spacing: 0.03em;
+                        line-height: 1.4;
+                    }
+                    .likes {
+                        width: 100%;
+                        margin: 0;
+                        margin-top: 5px;
+                        @include font($firaSans, 600);
+                        @include font-size(15px);
+                        letter-spacing: 0.03em;
+                        .fa {
+                            margin-right: 5px;
+                            @include font-size(14px);
+                        }
+                    }
+                }
+                .carouselContainer {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    .carouselThumbnailControlsSprite {
+                        background-image: $carousel;
+                        background-size: 100% 100%;
+                        background-position: 0 0;
+                    }
+                    .carouselControlsSprite {
+                        background-image: $playButton;
+                        background-size: 100% 100%;
+                        background-position: 0 0;
+                    }
+                    .carouselThumbnailControlsSprite {
+                        display: block;
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        top: 5px;
+                        right: 10px;
+                        z-index: 1;
+                        transition: 1s cubic-bezier(.19,1,.22,1);
+                        will-change: transform;
+                        opacity: 1;
+                    }
+                    .carouselControlsSprite {
+                        display: block;
+                        position: absolute;
+                        height: 135px;
+                        left: 50%;
+                        margin-left: -67px;
+                        margin-top: -67px;
+                        top: 50%;
+                        width: 135px;
+                        z-index: 1;
+                        transition: 1s cubic-bezier(.19,1,.22,1);
+                        will-change: transform;
+                    }
+                }
+                .videoContainer {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    .videoThumbnailControlsSprite {
+                        background-image: $video;
+                        background-size: 100% 100%;
+                        background-position: 0 0;
+                    }
+                    .videoControlsSprite {
+                        background-image: $playButton;
+                        background-size: 100% 100%;
+                        background-position: 0 0;
+                    }
+                    .videoThumbnailControlsSprite {
+                        display: block;
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        top: 5px;
+                        right: 10px;
+                        z-index: 1;
+                        transition: 1s cubic-bezier(.19,1,.22,1);
+                        will-change: transform;
+                        opacity: 1;
+                    }
+                    .videoControlsSprite {
+                        display: block;
+                        position: absolute;
+                        height: 135px;
+                        left: 50%;
+                        margin-left: -67px;
+                        margin-top: -67px;
+                        top: 50%;
+                        width: 135px;
+                        z-index: 1;
+                        transition: 1s cubic-bezier(.19,1,.22,1);
+                        will-change: transform;
+                    }
+                }
+                img, video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%; /* default value: image is centered*/
+                    transition: 1s cubic-bezier(.19,1,.22,1);
+                    will-change: transform;
+                    filter: blur(0);
+                    opacity: 1;
+                }
+                &:hover {
+                    .content {
+                        background: $bgGray;
+                    }
+                    .info {
+                        opacity: 1;
+                        transform: translate(-50%,0px);
+                    }
+                    .carouselContainer {
+                        .carouselThumbnailControlsSprite {
+                            opacity: 0;
+                            transform: scale(0.6);
+                            z-index: 0;
+                        }
+                    }
+                    .videoContainer {
+                        .videoThumbnailControlsSprite {
+                            opacity: 0;
+                            transform: scale(0.6);
+                            z-index: 0;
+                        }
+                    }
+                    img, video {
+                        opacity: 0.3;
+                        transform: scale(1.1);
+                        filter: blur(10px);
+                    }
+                }
+            }
+        }
+    }
+}
+// END post Thumbnails

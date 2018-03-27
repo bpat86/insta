@@ -1,0 +1,149 @@
+/* Nav */
+.globalNav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 50px;
+    background: #f9fafb;
+    z-index: 3;
+
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+    will-change: transform;
+    -webkit-transform: translateY(0) translateZ(0);
+    transform: translateY(0) translateZ(0);
+    &.scrolled {
+        background: #f9fafb;
+    }
+    &.hide {
+        -webkit-transform: translateY(-100%) translateZ(0);
+        transform: translateY(-100%) translateZ(0);
+    }
+    .navRoot {
+        position: relative;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+    .navSection {
+        &.logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50px;
+            .logoContainer {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                height: 50px;
+                line-height: 50px;
+                flex-direction: column;
+                h1 {
+                    @include font-size(24px);
+                    @include font($fira, 500);
+                    margin: 0;
+                    line-height: inherit;
+                    &.terminal {
+                        @include font-size(18px);
+                        @include font($fira, 500);
+                        letter-spacing: 0.03em;
+                        padding-bottom: 4px;
+                    }
+                    &:after {
+                        content:"_";
+                        font-weight: 400;
+                        opacity: 0;
+                        margin-left: 0.5em;
+                        animation: cursor 1s infinite;
+                    }
+                    @keyframes cursor {
+                        0% {
+                            opacity: 0;
+                        }
+                        40% {
+                            opacity: 0;
+                        }
+                        50% {
+                            opacity: 1;
+                        }
+                        90% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                }
+                img {
+                    max-width: 100%;
+                    height: 20px;
+                    padding-right: 8px;
+                }
+            }
+            .rootLink {
+                display: block;
+                line-height: inherit;
+                height: 100%;
+                color: $darkGray;
+                &.item-tagline {
+                    padding-left: 0;
+                    @include font-size(11px);
+                    line-height: initial;
+                    height: 13px;
+                }
+            }
+        }
+        &.primary, &.secondary {
+            display: -ms-flexbox;
+            display: flex;
+        }
+        &.primary {
+            -ms-flex-pack: center;
+            justify-content: center;
+            .rootLink {
+                font-weight: 400;
+            }
+        }
+        &.secondary {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .themeChange {
+            cursor: pointer;
+        }
+    }
+    .rootLink {
+        display: inline-block;
+        height: 50px;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-decoration: none;
+        @include font($fira, 400);
+        font-size: 17px;
+        line-height: 50px;
+        margin: 0;
+        padding: 0 20px;
+        &.colorize {
+            color: $darkGray;
+            &:hover {
+                color: rgba($darkGray, 0.8);
+            }
+        }
+        &.hasDropdown {
+            cursor: default;
+        }
+        &.item-home {
+            padding-left: 0;
+        }
+    }
+}
+/* END Nav */
