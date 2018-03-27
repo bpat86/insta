@@ -1,7 +1,7 @@
 # Insta
 This is a simple Instagram media viewer built with [React.js](https://github.com/facebookincubator/create-react-app) and React Router Dom.
 
-[![Simple Instagram Media Viewer](http://img.youtube.com/vi/https://youtu.be/https://youtu.be/19bq7ywfrxM/0.jpg)](http://www.youtube.com/watch?v=https://youtu.be/https://youtu.be/19bq7ywfrxM)
+[![Simple Instagram Media Viewer](http://img.youtube.com/vi/https://youtu.be/https://youtu.be/RQcUaTQ5nOs/0.jpg)](http://www.youtube.com/watch?v=https://youtu.be/https://youtu.be/RQcUaTQ5nOs)
 
 # Set up
 * Register your app in the [Instagram Developer's section](https://www.instagram.com/developer/) to receive an API access token
