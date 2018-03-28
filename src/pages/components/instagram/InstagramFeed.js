@@ -155,13 +155,10 @@ export default class InstagramFeed extends Component {
                                         >
         						        <div className="content">
         						        	<div className="info">
-        				                    	<h3 className="caption">
-                                                    {post.caption ? post.caption.text : null}
-                                                </h3>
-        				                    	<h5 className="likes">
+        				                    	<h3 className="likes">
                                                     <i className="fa fa-heart" aria-hidden="true"></i>
                                                     {post.likes.count}
-                                                </h5>
+                                                </h3>
         				                    </div>
         				                    { this.getPostMedia(post) }
         				                </div>

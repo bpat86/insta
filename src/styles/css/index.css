@@ -2867,7 +2867,7 @@ section {
 /* END Nav */
 .Instagram {
   flex: 1 100%;
-  margin: auto; }
+  margin: 6em 0; }
   .Instagram .instagramFeed p {
     margin-bottom: 1em; }
   .Instagram .instagramFeed .loadingContainer {
@@ -2934,154 +2934,142 @@ section {
       bottom: 0;
       left: 0;
       right: 0; }
-    .Instagram .instagramFeed .post .postLinks .info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin: 0;
-      padding: 1.25em;
-      width: 100%;
-      text-align: center;
-      left: 50%;
-      will-change: transform;
-      transform: translate(-50%, 12px) scale(0.9);
-      opacity: 0;
-      transition: 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-      -webkit-user-select: none;
-      /* Chrome all / Safari all */
-      -moz-user-select: none;
-      /* Firefox all */
-      -ms-user-select: none;
-      /* IE 10+ */
-      user-select: none;
-      /* Likely future */ }
-      .Instagram .instagramFeed .post .postLinks .info .caption {
-        width: 100%;
-        font-family: "Fira Sans", Helvetica, sans-serif;
-        font-weight: 400;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-size: 15px;
-        font-size: 0.9375rem;
-        letter-spacing: 0.03em;
-        line-height: 1.4; }
-      .Instagram .instagramFeed .post .postLinks .info .likes {
-        width: 100%;
+    .Instagram .instagramFeed .post .postLinks {
+      will-change: transform; }
+      .Instagram .instagramFeed .post .postLinks .info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         margin: 0;
-        margin-top: 5px;
-        font-family: "Fira Sans", Helvetica, sans-serif;
-        font-weight: 600;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-size: 15px;
-        font-size: 0.9375rem;
-        letter-spacing: 0.03em; }
-        .Instagram .instagramFeed .post .postLinks .info .likes .fa {
-          margin-right: 5px;
-          font-size: 14px;
-          font-size: 0.875rem; }
-    .Instagram .instagramFeed .post .postLinks .carouselContainer {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0; }
-      .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselThumbnailControlsSprite {
-        background-image: url(../../images/carouselIcon.svg);
-        background-size: 100% 100%;
-        background-position: 0 0; }
-      .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselControlsSprite {
-        background-image: url(../../images/playButton.svg);
-        background-size: 100% 100%;
-        background-position: 0 0; }
-      .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselThumbnailControlsSprite {
-        display: block;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        left: 50%;
+        opacity: 0;
+        -webkit-user-select: none;
+        /* Chrome all / Safari all */
+        -moz-user-select: none;
+        /* Firefox all */
+        -ms-user-select: none;
+        /* IE 10+ */
+        user-select: none;
+        /* Likely future */
+        transform: translateZ(0);
+        /*for older browsers*/
+        transform: translate(-50%, 1rem);
+        transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
+        .Instagram .instagramFeed .post .postLinks .info .likes {
+          width: 100%;
+          margin: 0;
+          margin-top: 5px;
+          font-family: "Fira Sans", Helvetica, sans-serif;
+          font-weight: 600;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          letter-spacing: 0.03em; }
+          .Instagram .instagramFeed .post .postLinks .info .likes .fa {
+            margin: 0;
+            margin-right: 10px;
+            font-size: 90%; }
+      .Instagram .instagramFeed .post .postLinks .carouselContainer {
         position: absolute;
-        width: 25px;
-        height: 25px;
-        top: 5px;
-        right: 10px;
-        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+        .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselThumbnailControlsSprite {
+          background-image: url(../../images/carouselIcon.svg);
+          background-size: 100% 100%;
+          background-position: 0 0; }
+        .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselControlsSprite {
+          background-image: url(../../images/playButton.svg);
+          background-size: 100% 100%;
+          background-position: 0 0; }
+        .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselThumbnailControlsSprite {
+          display: block;
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          top: 5px;
+          right: 10px;
+          z-index: 1;
+          transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+          opacity: 1; }
+        .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselControlsSprite {
+          display: block;
+          position: absolute;
+          height: 135px;
+          left: 50%;
+          margin-left: -67px;
+          margin-top: -67px;
+          top: 50%;
+          width: 135px;
+          z-index: 1;
+          transition: 1s cubic-bezier(0.19, 1, 0.22, 1); }
+      .Instagram .instagramFeed .post .postLinks .videoContainer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+        .Instagram .instagramFeed .post .postLinks .videoContainer .videoThumbnailControlsSprite {
+          background-image: url(../../images/videoIcon.svg);
+          background-size: 100% 100%;
+          background-position: 0 0; }
+        .Instagram .instagramFeed .post .postLinks .videoContainer .videoControlsSprite {
+          background-image: url(../../images/playButton.svg);
+          background-size: 100% 100%;
+          background-position: 0 0; }
+        .Instagram .instagramFeed .post .postLinks .videoContainer .videoThumbnailControlsSprite {
+          display: block;
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          top: 5px;
+          right: 10px;
+          z-index: 1;
+          transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+          opacity: 1; }
+        .Instagram .instagramFeed .post .postLinks .videoContainer .videoControlsSprite {
+          display: block;
+          position: absolute;
+          height: 135px;
+          left: 50%;
+          margin-left: -67px;
+          margin-top: -67px;
+          top: 50%;
+          width: 135px;
+          z-index: 1;
+          transition: 1s cubic-bezier(0.19, 1, 0.22, 1); }
+      .Instagram .instagramFeed .post .postLinks img, .Instagram .instagramFeed .post .postLinks video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        /* default value: image is centered*/
+        opacity: 1;
+        transform: translateZ(0);
+        /*for older browsers*/
         transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
         will-change: transform;
-        opacity: 1; }
-      .Instagram .instagramFeed .post .postLinks .carouselContainer .carouselControlsSprite {
-        display: block;
-        position: absolute;
-        height: 135px;
-        left: 50%;
-        margin-left: -67px;
-        margin-top: -67px;
-        top: 50%;
-        width: 135px;
-        z-index: 1;
-        transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-        will-change: transform; }
-    .Instagram .instagramFeed .post .postLinks .videoContainer {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0; }
-      .Instagram .instagramFeed .post .postLinks .videoContainer .videoThumbnailControlsSprite {
-        background-image: url(../../images/videoIcon.svg);
-        background-size: 100% 100%;
-        background-position: 0 0; }
-      .Instagram .instagramFeed .post .postLinks .videoContainer .videoControlsSprite {
-        background-image: url(../../images/playButton.svg);
-        background-size: 100% 100%;
-        background-position: 0 0; }
-      .Instagram .instagramFeed .post .postLinks .videoContainer .videoThumbnailControlsSprite {
-        display: block;
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        top: 5px;
-        right: 10px;
-        z-index: 1;
-        transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-        will-change: transform;
-        opacity: 1; }
-      .Instagram .instagramFeed .post .postLinks .videoContainer .videoControlsSprite {
-        display: block;
-        position: absolute;
-        height: 135px;
-        left: 50%;
-        margin-left: -67px;
-        margin-top: -67px;
-        top: 50%;
-        width: 135px;
-        z-index: 1;
-        transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-        will-change: transform; }
-    .Instagram .instagramFeed .post .postLinks img, .Instagram .instagramFeed .post .postLinks video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 50%;
-      /* default value: image is centered*/
-      transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-      will-change: transform;
-      filter: blur(0);
-      opacity: 1; }
-    .Instagram .instagramFeed .post .postLinks:hover .content {
-      background: rgba(155, 169, 187, 0.05); }
-    .Instagram .instagramFeed .post .postLinks:hover .info {
-      opacity: 1;
-      transform: translate(-50%, 0px); }
-    .Instagram .instagramFeed .post .postLinks:hover .carouselContainer .carouselThumbnailControlsSprite {
-      opacity: 0;
-      transform: scale(0.6);
-      z-index: 0; }
-    .Instagram .instagramFeed .post .postLinks:hover .videoContainer .videoThumbnailControlsSprite {
-      opacity: 0;
-      transform: scale(0.6);
-      z-index: 0; }
-    .Instagram .instagramFeed .post .postLinks:hover img, .Instagram .instagramFeed .post .postLinks:hover video {
-      opacity: 0.3;
-      transform: scale(1.1);
-      filter: blur(10px); }
+        filter: blur(0); }
+      .Instagram .instagramFeed .post .postLinks:hover .content {
+        background: rgba(155, 169, 187, 0.05); }
+      .Instagram .instagramFeed .post .postLinks:hover .info {
+        opacity: 1;
+        transform: translate(-50%, 0px); }
+      .Instagram .instagramFeed .post .postLinks:hover .carouselContainer .carouselThumbnailControlsSprite {
+        opacity: 0;
+        transform: scale(0.6);
+        z-index: 0; }
+      .Instagram .instagramFeed .post .postLinks:hover .videoContainer .videoThumbnailControlsSprite {
+        opacity: 0;
+        transform: scale(0.6);
+        z-index: 0; }
+      .Instagram .instagramFeed .post .postLinks:hover img, .Instagram .instagramFeed .post .postLinks:hover video {
+        opacity: 0.3;
+        filter: blur(10px); }
 
 .Instagram .InstagramSinglePageContainer {
   display: flex;
@@ -3104,7 +3092,9 @@ section {
     height: 100%;
     margin: 0 auto;
     padding: 0;
-    z-index: 999999; }
+    z-index: 999999;
+    transform: translateZ(0);
+    /*for older browsers*/ }
   .Instagram .InstagramSinglePage .contentModal {
     display: flex;
     justify-content: center;
@@ -3120,7 +3110,9 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    overflow: hidden; }
+    overflow: hidden;
+    transform: translateZ(0);
+    /*for older browsers*/ }
     .Instagram .InstagramSinglePage .contentModal .mediaContainer {
       display: flex;
       justify-content: center;
@@ -3507,10 +3499,6 @@ html.modalVisible .contentModalContainer {
   z-index: 3;
   pointer-events: auto;
   overflow: hidden; }
-html.modalVisible .contentModal {
-  opacity: 1;
-  will-change: transform;
-  transform: translateZ(0); }
 html.modalVisible .Instagram {
   z-index: auto; }
 
@@ -3528,7 +3516,9 @@ html.modalVisible .Instagram {
     height: 100%;
     margin: 0 auto;
     padding: 0;
-    z-index: 999999; }
+    z-index: 999999;
+    transform: translateZ(0);
+    /*for older browsers*/ }
   .LightBox .contentModalContainer {
     display: flex;
     justify-content: center;
@@ -3541,7 +3531,9 @@ html.modalVisible .Instagram {
     bottom: 0;
     opacity: 0;
     pointer-events: none;
-    overflow: hidden; }
+    overflow: hidden;
+    transform: translateZ(0);
+    /*for older browsers*/ }
   .LightBox .buttonContainer {
     margin: 0 auto;
     pointer-events: none; }
@@ -3650,7 +3642,8 @@ html.modalVisible .Instagram {
     z-index: 99999999;
     border-radius: 2px;
     overflow: hidden;
-    opacity: 0; }
+    transform: translateZ(0);
+    /*for older browsers*/ }
     .LightBox .contentModal .mediaContainer {
       display: flex;
       justify-content: center;
@@ -3879,7 +3872,6 @@ html.modalVisible .Instagram {
           right: 10px;
           z-index: 3;
           transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-          will-change: transform;
           opacity: 1; }
         .LightBox .contentModal .mediaContainer .videoContainer .videoControlsSprite, .LightBox .contentModal .mediaContainer .carouselContainer .videoControlsSprite, .LightBox .contentModal .mediaContainer .mediaContainer .videoControlsSprite {
           display: block;
@@ -3891,8 +3883,7 @@ html.modalVisible .Instagram {
           top: 50%;
           width: 135px;
           z-index: 3;
-          transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-          will-change: transform; }
+          transition: 1s cubic-bezier(0.19, 1, 0.22, 1); }
         .LightBox .contentModal .mediaContainer .videoContainer:hover .videoControlsSprite, .LightBox .contentModal .mediaContainer .carouselContainer:hover .videoControlsSprite, .LightBox .contentModal .mediaContainer .mediaContainer:hover .videoControlsSprite {
           opacity: 1;
           transform: scale(0.9); }

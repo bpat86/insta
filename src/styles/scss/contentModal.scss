@@ -11,11 +11,6 @@ html {
             pointer-events: auto;
             overflow: hidden;
         }
-        .contentModal {
-            opacity: 1;
-            will-change: transform;
-            transform: translateZ(0);
-        }
         .Instagram {
             z-index: auto;
         }
@@ -36,6 +31,7 @@ html {
         margin: 0 auto;
         padding: 0;
         z-index: 999999;
+        transform: translateZ(0); /*for older browsers*/
     }
     .contentModalContainer {
     	display: flex;
@@ -50,6 +46,7 @@ html {
         opacity: 0;
         pointer-events: none;
         overflow: hidden;
+        transform: translateZ(0); /*for older browsers*/
     }
     .buttonContainer {
         margin: 0 auto;
@@ -178,7 +175,7 @@ html {
     	z-index: 99999999;
         border-radius: 2px;
         overflow: hidden;
-        opacity: 0;
+        transform: translateZ(0); /*for older browsers*/
     	.mediaContainer {
     		display: flex;
     		justify-content: center;
@@ -432,7 +429,6 @@ html {
                     right: 10px;
                     z-index: 3;
                     transition: 1s cubic-bezier(.19,1,.22,1);
-                    will-change: transform;
                     opacity: 1;
                 }
                 .videoControlsSprite {
@@ -446,7 +442,6 @@ html {
                     width: 135px;
                     z-index: 3;
                     transition: 1s cubic-bezier(.19,1,.22,1);
-                    will-change: transform;
                 }
                 &:hover {
                 	.videoControlsSprite {

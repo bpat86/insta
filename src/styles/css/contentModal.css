@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$white".
-        on line 93 of src/styles/scss/contentModal.scss
+        on line 90 of src/styles/scss/contentModal.scss
 
-88:                     -webkit-filter: url(#blur-filter);
-89:                     filter: url(#blur-filter);
-90:                     opacity: 0.5;
-91:                 }
-92:                 .closeX {
-93:                     stroke: $white;
-94:                     fill: transparent;
-95:                     stroke-linecap: round;
-96:                     stroke-width: 5;
-97:                     border: 0;
-98:                     background: none;
+85:                     -webkit-filter: url(#blur-filter);
+86:                     filter: url(#blur-filter);
+87:                     opacity: 0.5;
+88:                 }
+89:                 .closeX {
+90:                     stroke: $white;
+91:                     fill: transparent;
+92:                     stroke-linecap: round;
+93:                     stroke-width: 5;
+94:                     border: 0;
+95:                     background: none;
 
 Backtrace:
-src/styles/scss/contentModal.scss:93
+src/styles/scss/contentModal.scss:90
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -113,4 +113,4 @@ src/styles/scss/contentModal.scss:93
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$white\".\A         on line 93 of src/styles/scss/contentModal.scss\A \A 88:                     -webkit-filter: url(#blur-filter);\A 89:                     filter: url(#blur-filter);\A 90:                     opacity: 0.5;\A 91:                 }\A 92:                 .closeX {\A 93:                     stroke: $white;\A 94:                     fill: transparent;\A 95:                     stroke-linecap: round;\A 96:                     stroke-width: 5;\A 97:                     border: 0;\A 98:                     background: none;"; }
+  content: "Error: Undefined variable: \"$white\".\A         on line 90 of src/styles/scss/contentModal.scss\A \A 85:                     -webkit-filter: url(#blur-filter);\A 86:                     filter: url(#blur-filter);\A 87:                     opacity: 0.5;\A 88:                 }\A 89:                 .closeX {\A 90:                     stroke: $white;\A 91:                     fill: transparent;\A 92:                     stroke-linecap: round;\A 93:                     stroke-width: 5;\A 94:                     border: 0;\A 95:                     background: none;"; }

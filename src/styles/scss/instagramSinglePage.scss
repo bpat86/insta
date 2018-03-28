@@ -22,6 +22,7 @@
             margin: 0 auto;
             padding: 0;
             z-index: 999999;
+            transform: translateZ(0); /*for older browsers*/
         }
         .contentModal {
         	display: flex;
@@ -39,6 +40,7 @@
             height: 100%;
             border-radius: 2px;
             overflow: hidden;
+            transform: translateZ(0); /*for older browsers*/
         	.mediaContainer {
         		display: flex;
         		justify-content: center;
