@@ -5,7 +5,7 @@ class ScrollToTop extends Component {
 	componentDidUpdate(prevProps) {
 		const { location } = this.props;
 
-		if (location !== prevProps.location && !location.pathname.includes('=') && !prevProps.location.pathname.includes('_')) {
+		if (location !== prevProps.location && !location.pathname.includes('_') && !prevProps.location.pathname.includes('_')) {
 			window.scrollTo(0, 0);
 		}
 	}
