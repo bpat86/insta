@@ -129,8 +129,7 @@ export default class InstagramSinglePageContainer extends Component {
                 const postComments = response.data.data.map(comment => comment)[0];
 
                 this.setState({
-                    recentPostComments: postComments,
-                    showModal: true
+                    recentPostComments: postComments
                 });
             })
             .catch(error => {
